@@ -34,7 +34,17 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           </dl>
         </div>
 
-        <div className={`case-visual case-visual-${project.slug}`} aria-hidden="true">
+        <div
+          className={`case-visual case-visual-${project.slug}${project.heroImage ? " case-visual-with-image" : ""}`}
+          aria-hidden={project.heroImage ? undefined : true}
+        >
+          {project.heroImage ? (
+            <img
+              className="case-visual-image"
+              src={project.heroImage.src}
+              alt={project.heroImage.alt}
+            />
+          ) : null}
           <span className="case-index">{project.number}</span>
           <div className="case-orbit orbit-one" />
           <div className="case-orbit orbit-two" />

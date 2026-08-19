@@ -30,6 +30,10 @@ export type Project = {
   results: string[];
   reflections: string[];
   nextSteps: string[];
+  heroImage?: {
+    src: string;
+    alt: string;
+  };
   repository?: string;
 };
 
@@ -43,6 +47,10 @@ export const projects: Project[] = [
     date: "2026.07",
     role: "个人项目 / 产品定义与全栈 MVP",
     type: "Chrome Extension · AI Copilot",
+    heroImage: {
+      src: "/projects/video-companion-product.png",
+      alt: "视频理解伴侣在 YouTube 页面中实时生成双语记录与视频问答的产品界面",
+    },
     lede: "让英文视频的理解发生在观看现场，而不是被迫切换到另一个工具。",
     summary:
       "面向英语听力不足的 YouTube 用户，将原字幕翻译工具重构为包含实时转写、智能断句、异步翻译和上下文问答的视频理解伴侣。",

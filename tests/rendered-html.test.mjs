@@ -87,3 +87,18 @@ test("ships the portrait, social card and both resume files", async () => {
     access(new URL("../app/_sites-preview", import.meta.url)),
   );
 });
+
+test("ships the video companion product screenshot", async () => {
+  await access(
+    new URL(
+      "../public/projects/video-companion-product.png",
+      import.meta.url,
+    ),
+  );
+
+  const response = await render("/projects/video-companion");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /\/projects\/video-companion-product\.png/);
+  assert.match(html, /视频理解伴侣在 YouTube 页面中实时生成双语记录与视频问答/);
+});
