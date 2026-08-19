@@ -1603,6 +1603,35 @@ ol {
   letter-spacing: 0.12em;
 }
 
+.case-intro-layout-with-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+}
+
+.case-intro-copy {
+  min-width: 0;
+}
+
+.case-intro-layout-with-image .case-summary {
+  font-size: clamp(2rem, 3.25vw, 3.7rem);
+}
+
+.case-context-visual {
+  margin: 0;
+  padding: clamp(10px, 1.2vw, 16px);
+  border: 1px solid var(--line);
+  background: #ebece6;
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.42);
+}
+
+.case-context-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .case-summary {
   max-width: 940px;
   margin-bottom: 45px;
@@ -2115,6 +2144,10 @@ ol {
     padding: 90px 0;
   }
 
+  .case-intro-layout-with-image {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr);
+  }
+
   .section-marker {
     position: static;
   }
@@ -2131,6 +2164,15 @@ ol {
 }
 
 @media (max-width: 620px) {
+  .case-intro-layout-with-image {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .case-intro-layout-with-image .case-summary {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
   .workbench-status {
     display: flex;
     justify-content: center;

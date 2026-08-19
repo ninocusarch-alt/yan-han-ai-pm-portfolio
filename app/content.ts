@@ -34,6 +34,10 @@ export type Project = {
     src: string;
     alt: string;
   };
+  contextImage?: {
+    src: string;
+    alt: string;
+  };
   repository?: string;
 };
 
@@ -134,6 +138,10 @@ export const projects: Project[] = [
     heroImage: {
       src: "/projects/workplace-support-product.png",
       alt: "缓一缓职场情绪支持助手的首页界面，展示倾听、梳理和行动建议三种对话入口",
+    },
+    contextImage: {
+      src: "/projects/workplace-support-conversation.png",
+      alt: "缓一缓职场情绪支持助手的匿名对话界面，展示用户表达压力与助手共情梳理的过程",
     },
     lede: "不替用户做决定，而是把混乱的职场压力整理成下一步可控行动。",
     summary:

@@ -58,13 +58,25 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
 
       <section className="case-intro case-section">
         <div className="section-marker">01 / CONTEXT</div>
-        <div>
-          <p className="case-summary">{project.summary}</p>
-          <div className="case-tags">
-            {project.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
+        <div
+          className={`case-intro-layout${project.contextImage ? " case-intro-layout-with-image" : ""}`}
+        >
+          <div className="case-intro-copy">
+            <p className="case-summary">{project.summary}</p>
+            <div className="case-tags">
+              {project.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
           </div>
+          {project.contextImage ? (
+            <figure className="case-context-visual">
+              <img
+                src={project.contextImage.src}
+                alt={project.contextImage.alt}
+              />
+            </figure>
+          ) : null}
         </div>
       </section>
 

@@ -104,16 +104,26 @@ test("ships the video companion product screenshot", async () => {
 });
 
 test("ships the workplace support product screenshot", async () => {
-  await access(
-    new URL(
-      "../public/projects/workplace-support-product.png",
-      import.meta.url,
+  await Promise.all([
+    access(
+      new URL(
+        "../public/projects/workplace-support-product.png",
+        import.meta.url,
+      ),
     ),
-  );
+    access(
+      new URL(
+        "../public/projects/workplace-support-conversation.png",
+        import.meta.url,
+      ),
+    ),
+  ]);
 
   const response = await render("/projects/workplace-support");
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /\/projects\/workplace-support-product\.png/);
   assert.match(html, /缓一缓职场情绪支持助手的首页界面/);
+  assert.match(html, /\/projects\/workplace-support-conversation\.png/);
+  assert.match(html, /展示用户表达压力与助手共情梳理的过程/);
 });
