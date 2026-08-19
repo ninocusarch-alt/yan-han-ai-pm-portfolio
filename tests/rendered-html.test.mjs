@@ -102,3 +102,18 @@ test("ships the video companion product screenshot", async () => {
   assert.match(html, /\/projects\/video-companion-product\.png/);
   assert.match(html, /视频理解伴侣在 YouTube 页面中实时生成双语记录与视频问答/);
 });
+
+test("ships the workplace support product screenshot", async () => {
+  await access(
+    new URL(
+      "../public/projects/workplace-support-product.png",
+      import.meta.url,
+    ),
+  );
+
+  const response = await render("/projects/workplace-support");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /\/projects\/workplace-support-product\.png/);
+  assert.match(html, /缓一缓职场情绪支持助手的首页界面/);
+});

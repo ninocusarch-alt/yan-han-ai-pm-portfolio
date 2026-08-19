@@ -1489,6 +1489,23 @@ ol {
   font-weight: 560;
 }
 
+.case-visual-workplace-support.case-visual-with-image {
+  aspect-ratio: 1098 / 870;
+  background: #e8eee8;
+}
+
+.case-visual-workplace-support.case-visual-with-image::after {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.08), transparent 36%);
+}
+
+.case-visual-workplace-support.case-visual-with-image .case-visual-card {
+  display: none;
+}
+
+.case-visual-workplace-support.case-visual-with-image .case-index {
+  color: rgba(255, 255, 255, 0.34);
+}
+
 .case-index {
   position: absolute;
   top: 3%;

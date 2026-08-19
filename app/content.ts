@@ -131,6 +131,10 @@ export const projects: Project[] = [
     date: "2026.07",
     role: "个人项目 / AI 产品设计与 Web MVP",
     type: "Conversational AI · Memory",
+    heroImage: {
+      src: "/projects/workplace-support-product.png",
+      alt: "缓一缓职场情绪支持助手的首页界面，展示倾听、梳理和行动建议三种对话入口",
+    },
     lede: "不替用户做决定，而是把混乱的职场压力整理成下一步可控行动。",
     summary:
       "将泛化 AI 陪伴收敛到具体职场压力场景，以结构化对话、长期记忆、安全边界和数据删除权组织完整体验。",
