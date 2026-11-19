@@ -39,12 +39,13 @@ test("renders the finished AI product manager portfolio", async () => {
   assert.match(html, /严晗的产品工作台/);
   assert.match(html, /意向岗位：AI 产品经理实习生/);
   assert.match(html, /实时 AI 视频理解伴侣/);
-  assert.match(html, /“缓一缓”职场情绪支持助手/);
+  assert.match(html, /樾阶教育课程顾问 Agent/);
   assert.match(html, /AI 智能轮椅产品商业方案/);
   assert.match(html, /ninocusarch@gmail\.com/i);
   assert.match(html, /yan-han-ai-pm-optimized\.pdf/);
   assert.match(html, /yan-han-ai-pm-ats\.pdf/);
   assert.match(html, /http:\/\/localhost\/og\.png/);
+  assert.doesNotMatch(html, /缓一缓|workplace-support|workplace-emotion-demo/i);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
   assert.doesNotMatch(html, /153\s*2769\s*0822/);
 });
@@ -52,7 +53,7 @@ test("renders the finished AI product manager portfolio", async () => {
 test("renders each project case study with evidence and navigation", async () => {
   const routes = [
     ["/projects/video-companion", "12", "产品与 AI 工作流"],
-    ["/projects/workplace-support", "30", "长期记忆"],
+    ["/projects/education-agent", "13", "RAG 引用"],
     ["/projects/smart-wheelchair", "校园竞赛第一名", "商业模式"],
   ];
 
@@ -103,27 +104,28 @@ test("ships the video companion product screenshot", async () => {
   assert.match(html, /视频理解伴侣在 YouTube 页面中实时生成双语记录与视频问答/);
 });
 
-test("ships the workplace support product screenshot", async () => {
+test("ships the education agent product and workflow visuals", async () => {
   await Promise.all([
     access(
       new URL(
-        "../public/projects/workplace-support-product.png",
+        "../public/projects/education-agent-product.png",
         import.meta.url,
       ),
     ),
     access(
       new URL(
-        "../public/projects/workplace-support-conversation.png",
+        "../public/projects/education-agent-workflow.png",
         import.meta.url,
       ),
     ),
   ]);
 
-  const response = await render("/projects/workplace-support");
+  const response = await render("/projects/education-agent");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /\/projects\/workplace-support-product\.png/);
-  assert.match(html, /缓一缓职场情绪支持助手的首页界面/);
-  assert.match(html, /\/projects\/workplace-support-conversation\.png/);
-  assert.match(html, /展示用户表达压力与助手共情梳理的过程/);
+  assert.match(html, /\/projects\/education-agent-product\.png/);
+  assert.match(html, /樾阶教育课程顾问 Agent 的调试后台界面/);
+  assert.match(html, /\/projects\/education-agent-workflow\.png/);
+  assert.match(html, /展示退费人工审批、检查点和回归评测结果/);
+  assert.doesNotMatch(html, /缓一缓|workplace-support|情绪支持/);
 });

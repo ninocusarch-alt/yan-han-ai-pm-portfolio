@@ -35,7 +35,7 @@ export function WorkbenchHero({ projects }: WorkbenchHeroProps) {
   }
 
   const videoProject = projects[0];
-  const workplaceProject = projects[1];
+  const educationProject = projects[1];
 
   return (
     <section
@@ -118,18 +118,18 @@ export function WorkbenchHero({ projects }: WorkbenchHeroProps) {
 
         <a
           className="board-card project-card project-card-secondary"
-          href={`/projects/${workplaceProject.slug}`}
-          aria-label={`查看项目：${workplaceProject.title}`}
+          href={`/projects/${educationProject.slug}`}
+          aria-label={`查看项目：${educationProject.title}`}
         >
-          <p className="micro-label">PROJECT / {workplaceProject.number}</p>
+          <p className="micro-label">PROJECT / {educationProject.number}</p>
           <div className="conversation-preview" aria-hidden="true">
-            <span className="bubble bubble-a">先说说发生了什么</span>
-            <span className="bubble bubble-b">把担忧拆成可控行动</span>
-            <span className="memory-chip">MEMORY / SAFE</span>
+            <span className="bubble bubble-a">课程还有班位吗？</span>
+            <span className="bubble bubble-b">退费需人工审批</span>
+            <span className="memory-chip">TOOL / RAG / HITL</span>
           </div>
           <div className="board-card-bottom">
-            <strong>{workplaceProject.shortTitle}</strong>
-            <span>CONVERSATION · MEMORY ↗</span>
+            <strong>{educationProject.shortTitle}</strong>
+            <span>TOOL · RAG · HITL ↗</span>
           </div>
         </a>
 

@@ -9,6 +9,6 @@ export const metadata: Metadata = {
   description: project.summary,
 };
 
-export default function WorkplaceSupportPage() {
+export default function EducationAgentPage() {
   return <ProjectCaseStudy project={project} />;
 }

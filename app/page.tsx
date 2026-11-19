@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "严晗｜AI 产品经理",
   description:
-    "严晗的 AI 产品经理作品集：实时 AI 视频理解伴侣、职场情绪支持助手、AI 智能轮椅商业方案与实践经历。",
+    "严晗的 AI 产品经理作品集：实时 AI 视频理解伴侣、教育课程顾问 Agent、AI 智能轮椅商业方案与实践经历。",
 };
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
           <div>
             <h2>把 AI 能力变成可理解、可控制的产品体验。</h2>
             <p>
-              三个项目分别验证实时 AI 工作流、对话与记忆治理，以及复杂产品的商业与落地判断。
+              三个项目分别验证实时 AI 工作流、Agent 编排与业务边界治理，以及复杂产品的商业与落地判断。
             </p>
           </div>
         </header>
